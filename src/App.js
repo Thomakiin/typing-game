@@ -21,7 +21,7 @@ function App() {
 
   const [currentText, setCurrentText] = useState('');
   const [pressedKey, setPressedKey] = useState('');
-  const [textToEnter, setTextToEnter] = useState("yarr"); //Type this text including spaces, pay attention to case!
+  const [textToEnter, setTextToEnter] = useState("Type this text including spaces, pay attention to case!"); 
 
   document.onkeypress = handleKeyPress;
 
