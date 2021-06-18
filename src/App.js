@@ -1,14 +1,25 @@
 import { useState } from 'react';
 import './App.css';
-import {quotes} from './quotes.json';
+import { quotes } from './quotes.json';
+//import swal from '@sweetalert/with-react';
 
-//var textToEnter = 'Enter this text!';
 var currentIndex = 0; // index of the text we need to enter
+
+function GetRandomQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)].quote;
+}
+
+function PlayAnimation(animClass, elementID) {
+  var el = document.getElementById(elementID);
+  el.classList.remove(animClass);
+  void el.offsetWidth;
+  el.classList.add(animClass);
+}
 
 function App() {
   const [currentText, setCurrentText] = useState('');
   const [pressedKey, setPressedKey] = useState('');
-  const [textToEnter, setTextToEnter] = useState(quotes[Math.floor(Math.random()*quotes.length)].quote);
+  const [textToEnter, setTextToEnter] = useState("Type this text including spaces, pay attention to case!");
 
   document.onkeypress = handleKeyPress;
 
@@ -16,23 +27,20 @@ function App() {
     setPressedKey(e.key);
     var letterToEnter = textToEnter.charAt(currentIndex);
     console.log("letterToEnter: " + letterToEnter);
-    var el = document.getElementById("pressedKey");
-    el.classList.remove("keyPressAnimClass");
-    void el.offsetWidth;
-    el.classList.add("keyPressAnimClass");
 
     if (e.key === letterToEnter) {
+
+      PlayAnimation("keyPressAnimClass", "pressedKey");
       setCurrentText(currentText + e.key);
       currentIndex++;
-      console.log("currentIndex =" + currentIndex);
       if (currentIndex >= textToEnter.length) {
-        alert("You win!");
-        console.log("Completed!");
-        setTextToEnter(quotes[Math.floor(Math.random()*quotes.length)].quote);
+        setTextToEnter(GetRandomQuote());
+        setCurrentText("");
         currentIndex = 0;
       }
     }
     else {
+      PlayAnimation("shakeAnimClass", "pressedKey");
       console.log(e.key + " incorrect key entered!");
     }
   }
@@ -40,17 +48,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>Typing Game!</h3>
+        <h3 className="Title">Typing Game!</h3>
         <p id="textToEnter">
           {textToEnter}
         </p>
-
         <p className="currentText">
           {currentText}
         </p>
-        
         <h2 id="pressedKey" className="pressedKey">{pressedKey}</h2>
-
       </header>
     </div>
   );

@@ -17,28 +17,69 @@
   color: #61dafb;
 }
 
+.title{
+}
+
 .currentText {
-  /*border-radius: 10%;
+  /*
+  border-radius: 10%;
   border-color: azure;
-  background-color: white;
+  background-color: rgba(223, 208, 208, 0.289);
   */
+  color: #61dafb;
 }
 
 .pressedKey{
   color: #61dafb;
   position: absolute;
-  top: 60%;
+  top: 70%;
   font-size: calc(10px + 4vmin);
 }
 
+
+
+/* The animation code */
+@keyframes keyPressAnim {
+  0%   {  font-size: calc(10px + 6vmin);}
+  100%    {  font-size: calc(10px + 4vmin);}
+}
 .keyPressAnimClass
 {
   animation-name: keyPressAnim;
   animation-duration: 0.5s;
 }
 
-/* The animation code */
-@keyframes keyPressAnim {
-  0%   {  font-size: calc(10px + 6vmin);}
-  100%    {  font-size: calc(10px + 4vmin);}
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); color: red; }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+.shakeAnimClass
+{
+  animation-name: shake;
+  animation-duration: 0.5s;
+}
+
+
+.alert {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .9);
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 5rem;
+  flex-direction: column;
 }
