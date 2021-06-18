@@ -4,6 +4,7 @@ import { quotes } from './quotes.json';
 
 var currentIndex = 0; // index of the text we need to enter
 
+
 function GetRandomQuote() {
   return quotes[Math.floor(Math.random() * quotes.length)].quote;
 }
@@ -16,16 +17,17 @@ function PlayAnimation(animClass, elementID) {
 }
 
 function App() {
+  //var startTime = new Date();
+
   const [currentText, setCurrentText] = useState('');
   const [pressedKey, setPressedKey] = useState('');
-  const [textToEnter, setTextToEnter] = useState("Type this text including spaces, pay attention to case!");
+  const [textToEnter, setTextToEnter] = useState("yarr"); //Type this text including spaces, pay attention to case!
 
   document.onkeypress = handleKeyPress;
 
   function handleKeyPress(e) {
     setPressedKey(e.key);
     var letterToEnter = textToEnter.charAt(currentIndex);
-    console.log("letterToEnter: " + letterToEnter);
 
     if (e.key === letterToEnter) {
 
@@ -33,6 +35,12 @@ function App() {
       setCurrentText(currentText + e.key);
       currentIndex++;
       if (currentIndex >= textToEnter.length) {
+
+        // Display stats
+        // var finishTime = (new Date().getTime() - startTime) / 1000;
+        // alert("Time taken: " + finishTime + " seconds");
+
+        // Reset game
         setTextToEnter(GetRandomQuote());
         setCurrentText("");
         currentIndex = 0;
@@ -40,14 +48,13 @@ function App() {
     }
     else {
       PlayAnimation("shakeAnimClass", "pressedKey");
-      console.log(e.key + " incorrect key entered!");
     }
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <h3 className="Title">Typing Game!</h3>
+        <h3 className="Title">Simple Typing Game</h3>
         <p id="textToEnter">
           {textToEnter}
         </p>
