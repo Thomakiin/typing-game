@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import './App.css';
 import { quotes } from './quotes.json';
-//import swal from '@sweetalert/with-react';
 
 var currentIndex = 0; // index of the text we need to enter
 
