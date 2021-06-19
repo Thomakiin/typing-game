@@ -1,5 +1,7 @@
 <h1>Typing Game</h1>
 
+![Screenshot (44)](https://user-images.githubusercontent.com/29510437/122645300-ce2cd700-d0e7-11eb-82c0-bcadcb1798d8.png)
+
 <h2> About: </h2>
 <p>
 I created this app as a learning exercise for myself to get more fimiliar with react, and to play with CSS animations and sounds!
