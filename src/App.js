@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './App.css';
 import { quotes } from './quotes.json';
+import useSound from 'use-sound';
+import typingSound from './typingSound.wav';
+import blipSound from './blipSound.wav';
+import completeSound from './completeSound.wav';
 
 var currentIndex = 0; // index of the text we need to enter
 
@@ -17,30 +21,33 @@ function PlayAnimation(animClass, elementID) {
 }
 
 function App() {
-  //var startTime = new Date();
+  const [playTypeSound] = useSound(typingSound, { volume: 0.25 });
+  const [playErrorSound] = useSound(blipSound, { volume: 0.25 });
+  const [playCompleteSound] = useSound(completeSound, { volume: 0.25 });
 
   const [currentText, setCurrentText] = useState('');
   const [pressedKey, setPressedKey] = useState('');
-  const [textToEnter, setTextToEnter] = useState("Type this text including spaces. Pay attention to case!"); 
+  const [textToEnter, setTextToEnter] = useState("Type this text including spaces. Pay attention to case!");
 
   document.onkeypress = handleKeyPress;
 
   function handleKeyPress(e) {
+
     setPressedKey(e.key);
     var letterToEnter = textToEnter.charAt(currentIndex);
 
     if (e.key === letterToEnter) {
-
+      playTypeSound();
       PlayAnimation("keyPressAnimClass", "pressedKey");
       setCurrentText(currentText + e.key);
       currentIndex++;
       if (currentIndex >= textToEnter.length) {
-
+        playCompleteSound();
         // Display stats
         // var finishTime = (new Date().getTime() - startTime) / 1000;
         // alert("Time taken: " + finishTime + " seconds");
 
-        // Reset game
+        // Setup next "game"
         setTextToEnter(GetRandomQuote());
         setCurrentText("");
         currentIndex = 0;
@@ -48,6 +55,7 @@ function App() {
     }
     else {
       PlayAnimation("shakeAnimClass", "pressedKey");
+      playErrorSound();
     }
   }
 
