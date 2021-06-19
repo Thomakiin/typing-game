@@ -16,10 +16,12 @@ I created this app as a learning exercise for myself to get more fimiliar with r
 
 <h2> Features </h2>
 <ul>
-<li> Finds a random quote for you to type (quotes source: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80) </li>
+<li> Finds a random quote for you to type from this list: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </li>
+<li> Fun sound effects and CSS animations </li>
 </ul>
 
 <h2> Credits: </h2>
+<div> List of quotes: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </div>
 <div> Sound Library: https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/#finding-and-prepping-sounds </div>
 <div>Typing sound: https://freesound.org/people/Plutoniumisotop/sounds/371190/ </div>
 <div>Error sound: https://freesound.org/people/StaneStane/sounds/73560/ </div>
