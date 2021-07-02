@@ -43,10 +43,6 @@ function App() {
       currentIndex++;
       if (currentIndex >= textToEnter.length) {
         playCompleteSound();
-        // Display stats
-        // var finishTime = (new Date().getTime() - startTime) / 1000;
-        // alert("Time taken: " + finishTime + " seconds");
-
         // Setup next "game"
         setTextToEnter(GetRandomQuote());
         setCurrentText("");
@@ -67,7 +63,7 @@ function App() {
           {textToEnter}
         </p>
         <p className="currentText">
-          {currentText}
+          {"'" + currentText + "'"}
         </p>
         <h2 id="pressedKey" className="pressedKey">{pressedKey}</h2>
       </header>
