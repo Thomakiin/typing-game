@@ -4,7 +4,7 @@
 
 <h2> About: </h2>
 <p>
-I created this app as a learning exercise for myself to get more fimiliar with react, and to play with CSS animations and sounds!
+I created this app as a small learning exercise for myself to get more fimiliar with react's use state hook, and to play with CSS animations and sounds
 </p>
 
 <h2> How to Play: </h2>
@@ -16,7 +16,7 @@ I created this app as a learning exercise for myself to get more fimiliar with r
 
 <h2> Features </h2>
 <ul>
-<li> Finds a random quote for you to type from this list: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </li>
+<li> Finds a random quote for you to type from a list of JSON elements: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </li>
 <li> Fun sound effects and CSS animations </li>
 </ul>
 
