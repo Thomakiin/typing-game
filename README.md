@@ -4,20 +4,22 @@
 
 <h2> About: </h2>
 <p>
-I created this app as a small learning exercise for myself to get more fimiliar with react's use state hook, and to play with CSS animations and sounds
+Practice your typing with this simple app I created as a React learning exercise
 </p>
-
-<h2> How to Play: </h2>
-<ul>
-<li>Find the deployment here: https://github.com/Thomakiin/typing-game/deployments/activity_log?environment=Production</li>
-<li>Type the displayed text including spaces (it is case sensitive) </li>
-<li>Have fun!</li>
-</ul>
 
 <h2> Features </h2>
 <ul>
-<li> Finds a random quote for you to type from a list of JSON elements: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </li>
-<li> Fun sound effects and CSS animations </li>
+<li> An event listener records your keyboard input as you attempt to type the provided text  </li>
+<li> After the tutorial, the app will find a random quote for you to type from a list of JSON elements: https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80 </li>
+<li> CSS animations for incorrect typing </li>
+<li> Sound effects for typing and mis-typing using "use sound" library: https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/#finding-and-prepping-sounds </li>
+</ul>
+
+<h2> How to Play: </h2>
+<ul>
+<li>Find the most recent deployment here: https://github.com/Thomakiin/typing-game/deployments/activity_log?environment=Production</li>
+<li>Type the displayed text including spaces (it is case sensitive) </li>
+<li>Have fun!</li>
 </ul>
 
 <h2> Credits: </h2>
