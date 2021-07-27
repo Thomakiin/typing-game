@@ -4,7 +4,7 @@
 
 <h2> About: </h2>
 <p>
-Practice your typing with this simple app I created as a React learning exercise
+Practice your typing with with this simple and clean React app! <a href="https://typing-game-thomakiin.vercel.app"> Try it here!</a>
 </p>
 
 <h2> Features </h2>
@@ -17,7 +17,6 @@ Practice your typing with this simple app I created as a React learning exercise
 
 <h2> How to Play: </h2>
 <ul>
-<li>Find the most recent deployment here: https://github.com/Thomakiin/typing-game/deployments/activity_log?environment=Production</li>
 <li>Type the displayed text including spaces (it is case sensitive) </li>
 <li>Have fun!</li>
 </ul>
